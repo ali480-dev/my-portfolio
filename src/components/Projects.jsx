@@ -1,6 +1,4 @@
 
-import "./Projects.css";
-
 const projects = [
   {
     number: "01",
@@ -9,38 +7,46 @@ const projects = [
     description:
       "Track expenses, manage transactions, and calculate total spending with an interactive interface.",
     technologies: ["HTML", "CSS", "JavaScript", "LocalStorage"],
+    image: "/images/expense-tracker.png",
+    imageAlt: "Expense Tracker application interface",
     github: "https://github.com/ali480-dev/ExpenseTrackerV2",
     demo: "https://ali480-dev.github.io/ExpenseTrackerV2/",
   },
   {
     number: "02",
+    title: "E-commerce Website",
+    category: "React Application",
+    description:
+      "A modern shopping website featuring product search, navigation, and a working shopping cart.",
+    technologies: ["React", "JavaScript", "CSS"],
+    image: "/images/ecommerce.png",
+    imageAlt: "E-commerce website interface",
+    github: "https://github.com/ali480-dev",
+    demo: "https://ecommerce-website-mpq1vq8ka-ali480-dev.vercel.app/",
+  },
+  {
+    number: "03",
     title: "Quiz App",
     category: "Interactive Web App",
     description:
       "An interactive quiz application with multiple questions, answer feedback, and a final score.",
     technologies: ["HTML", "CSS", "JavaScript"],
+    image: "/images/quiz-app.png",
+    imageAlt: "Quiz application interface",
     github: "https://github.com/ali480-dev/QuizApp",
     demo: "https://ali480-dev.github.io/QuizApp/",
   },
   {
-    number: "03",
+    number: "04",
     title: "Weather App",
     category: "API-Based Application",
     description:
-      "Search for a city and view weather information using data from a weather API.",
+      "Search for a city and view weather information using weather API data.",
     technologies: ["HTML", "CSS", "JavaScript", "API"],
+    image: "/images/weather-app.png",
+    imageAlt: "Weather application interface",
     github: "https://github.com/ali480-dev/WeatherApp",
     demo: "https://ali480-dev.github.io/WeatherApp/",
-  },
-  {
-    number: "04",
-    title: "E-commerce Website",
-    category: "React Application",
-    description:
-      "A modern shopping interface featuring product search, navigation, and a working shopping cart.",
-    technologies: ["React", "JavaScript", "CSS"],
-    github: "https://github.com/ali480-dev",
-    demo: "https://ecommerce-website-mpq1vq8ka-ali480-dev.vercel.app/",
   },
 ];
 
@@ -48,21 +54,29 @@ function Projects() {
   return (
     <section className="projects section" id="projects">
       <div className="section-heading">
-        <p className="section-label">02 / SELECTED WORK</p>
+        <span className="section-label">MY WORK</span>
 
         <h2>
-          Projects I've <span>built.</span>
+          Featured <span>Projects</span>
         </h2>
 
         <p className="projects-intro">
-          A selection of projects I've developed while
-          learning frontend development and React.
+          Here are some of the projects I've built while developing my
+          frontend skills.
         </p>
       </div>
 
       <div className="projects-grid">
         {projects.map((project) => (
           <article className="project-card" key={project.number}>
+            <div className="project-image">
+              <img
+                src={project.image}
+                alt={project.imageAlt}
+                loading="lazy"
+              />
+            </div>
+
             <div className="project-top">
               <span className="project-number">
                 {project.number}
@@ -94,15 +108,13 @@ function Projects() {
                 GitHub ↗
               </a>
 
-              {project.demo && (
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Live Demo ↗
-                </a>
-              )}
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Live Demo ↗
+              </a>
             </div>
           </article>
         ))}

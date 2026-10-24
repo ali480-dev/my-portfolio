@@ -64,9 +64,13 @@ function Hero() {
       <div className="hero-visual" aria-hidden="true">
         <div className="hero-orbit orbit-one"></div>
         <div className="hero-orbit orbit-two"></div>
-        <div className="hero-monogram">
-          A<span>.</span>
-        </div>
+          <div className="hero-monogram">
+    <img
+      src="/Profile.png"
+      alt="Ahtisham Abbasi"
+      className="profile-picture"
+    />
+  </div>
         <div className="hero-card">
           <span className="card-dot"></span>
           Open to opportunities
